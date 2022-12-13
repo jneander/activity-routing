@@ -88,7 +88,7 @@ describe('Router', () => {
       it('incorporates the params into the url', () => {
         const activity = router.buildActivity('actOnTopic', {
           action: 'publish',
-          topic: 'magazine'
+          topic: 'magazine',
         })
         expect(activity.url).to.equal('/topics/magazine/publish')
       })
@@ -96,7 +96,7 @@ describe('Router', () => {
       it('assigns the params to the activity', () => {
         const activity = router.buildActivity('actOnTopic', {
           action: 'publish',
-          topic: 'magazine'
+          topic: 'magazine',
         })
         expect(activity.params).to.deep.equal({action: 'publish', topic: 'magazine'})
       })
@@ -106,7 +106,7 @@ describe('Router', () => {
       it('ignores the unrecognized params for the url', () => {
         const activity = router.buildActivity('showUser', {
           id: '123',
-          name: 'Adam'
+          name: 'Adam',
         })
         expect(activity.url).to.equal('/users/123')
       })
@@ -114,7 +114,7 @@ describe('Router', () => {
       it('excludes the unrecognized params from the activity params', () => {
         const activity = router.buildActivity('showUser', {
           id: '123',
-          name: 'Adam'
+          name: 'Adam',
         })
         expect(activity.params).to.deep.equal({id: '123'})
       })
@@ -134,8 +134,8 @@ describe('Router', () => {
           'help',
           {},
           {
-            topic: 'books'
-          }
+            topic: 'books',
+          },
         )
         expect(activity.url).to.equal('/help?topic=books')
       })
@@ -145,8 +145,8 @@ describe('Router', () => {
           'help',
           {},
           {
-            topic: 'books'
-          }
+            topic: 'books',
+          },
         )
         expect(activity.query).to.deep.equal({topic: 'books'})
       })
@@ -216,7 +216,7 @@ describe('Router', () => {
         const query = {data: 'example', querying: 'true'}
         const activity = router.buildActivityFromLocation(
           '/users/123',
-          'data=example&querying=true'
+          'data=example&querying=true',
         )
         expect(activity.query).to.deep.equal(query)
       })

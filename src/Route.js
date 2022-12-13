@@ -25,7 +25,7 @@ export default class Route {
       name: this.activityName,
       params: this._urlPattern.match(url),
       query: query || {},
-      url: `${url}${queryString}`
+      url: `${url}${queryString}`,
     }
   }
 

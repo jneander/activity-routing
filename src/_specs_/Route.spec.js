@@ -44,7 +44,7 @@ describe('Route', () => {
       function buildActivity() {
         return route.buildActivity({
           messageId: '456',
-          userId: '123'
+          userId: '123',
         })
       }
 
@@ -55,7 +55,7 @@ describe('Route', () => {
       it('assigns the params to the activity', () => {
         expect(buildActivity().params).to.deep.equal({
           messageId: '456',
-          userId: '123'
+          userId: '123',
         })
       })
     })
@@ -65,7 +65,7 @@ describe('Route', () => {
         return route.buildActivity({
           accountId: '789',
           messageId: '456',
-          userId: '123'
+          userId: '123',
         })
       }
 
@@ -76,7 +76,7 @@ describe('Route', () => {
       it('excludes the unrecognized params from the activity params', () => {
         expect(buildActivity().params).to.deep.equal({
           messageId: '456',
-          userId: '123'
+          userId: '123',
         })
       })
     })

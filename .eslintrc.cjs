@@ -1,13 +1,13 @@
 const {configureEslint} = require('@jneander/dev-lint')
 
 module.exports = configureEslint({
-  node: true
+  node: true,
 })
 
 module.exports.overrides.push({
   env: {
-    node: true
+    node: true,
   },
 
-  files: ['./config/**/*.js', './scripts/**/*.js', '.eslintrc.cjs', '.prettierrc.cjs']
+  files: ['./config/**/*.js', './scripts/**/*.js', '.eslintrc.cjs', '.prettierrc.cjs'],
 })
