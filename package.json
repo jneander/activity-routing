@@ -35,18 +35,18 @@
   "devDependencies": {
     "@jneander/dev-build": "^1.0.1",
     "@jneander/dev-lint": "^1.0.1",
-    "@jneander/dev-utils-node": "^1.0.1",
-    "babel-loader": "^8.2.2",
+    "@jneander/dev-utils-node": "^2.0.0",
+    "babel-loader": "^9.1.0",
     "chai": "^4.3.0",
     "karma": "^6.1.0",
     "karma-chrome-launcher": "^3.1.0",
     "karma-mocha": "^2.0.1",
     "karma-sourcemap-loader": "^0.3.8",
-    "karma-spec-reporter": "^0.0.32",
+    "karma-spec-reporter": "^0.0.35",
     "karma-webpack": "^5.0.0",
-    "mocha": "^8.2.1",
+    "mocha": "^10.0.0",
     "process": "^0.11.10",
-    "sinon": "^9.2.4",
+    "sinon": "^15.0.0",
     "webpack": "^5.21.1"
   }
 }
