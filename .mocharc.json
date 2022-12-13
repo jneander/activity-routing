@@ -1,0 +1,4 @@
+{
+  "node-option": ["experimental-specifier-resolution=node"],
+  "spec": ["src/**/*.spec.js"]
+}

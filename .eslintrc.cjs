@@ -1,7 +1,7 @@
 const {configureEslint} = require('@jneander/dev-lint')
 
 module.exports = configureEslint({
-  browser: true
+  node: true
 })
 
 module.exports.overrides.push({
@@ -9,5 +9,5 @@ module.exports.overrides.push({
     node: true
   },
 
-  files: ['./config/**/*.js', './scripts/**/*.js']
+  files: ['./config/**/*.js', './scripts/**/*.js', '.eslintrc.cjs', '.prettierrc.cjs']
 })
