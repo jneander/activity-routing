@@ -1,7 +1,7 @@
 import qs from 'qs'
 import UrlPattern from 'url-pattern'
 
-export default class Route {
+export class Route {
   constructor(activityName, pathPattern) {
     const pathParts = pathPattern.split('/').filter(str => str)
 

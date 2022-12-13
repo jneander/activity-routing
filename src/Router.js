@@ -1,6 +1,6 @@
 import qs from 'qs'
 
-import Route from './Route'
+import {Route} from './Route'
 
 function pathParts(path) {
   return path.split('/').filter(part => part)
@@ -10,7 +10,7 @@ function cleanPath(path) {
   return `/${path.replace(/^\//, '')}`
 }
 
-export default class Router {
+export class Router {
   constructor(contexts = []) {
     this._contexts = [...contexts]
     this._routeList = []
