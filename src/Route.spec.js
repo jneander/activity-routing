@@ -1,6 +1,6 @@
 import {expect} from 'chai'
 
-import Route from '../Route'
+import Route from './Route'
 
 describe('Route', () => {
   let route

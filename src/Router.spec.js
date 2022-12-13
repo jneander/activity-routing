@@ -1,6 +1,6 @@
 import {expect} from 'chai'
 
-import Router from '../Router'
+import Router from './Router'
 
 describe('Router', () => {
   let router
