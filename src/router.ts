@@ -1,22 +1,26 @@
 import qs from 'qs'
 
-import {Route} from './Route'
+import {Route} from './route'
+import type {Activity, ActivityParams, ActivityQuery, RouteContext} from './types'
 
-function pathParts(path) {
+function pathParts(path: string): string[] {
   return path.split('/').filter(part => part)
 }
 
-function cleanPath(path) {
+function cleanPath(path: string): string {
   return `/${path.replace(/^\//, '')}`
 }
 
 export class Router {
-  constructor(contexts = []) {
+  private _contexts: RouteContext[]
+  private _routeList: Route[]
+
+  constructor(contexts: RouteContext[] = []) {
     this._contexts = [...contexts]
     this._routeList = []
   }
 
-  add(name, path) {
+  add(name: string, path: string): void {
     const contextPaths = this._contexts.map(context => context.path)
     const paths = pathParts(path).map(cleanPath)
     const fullPath = [...contextPaths, ...paths].join('')
@@ -24,13 +28,17 @@ export class Router {
     this._routeList.push(route)
   }
 
-  within(path, defineFn) {
+  within(path: string, defineFn: (context: Router) => void): void {
     const context = new Router([...this._contexts, {path: cleanPath(path)}])
     defineFn(context)
     this._routeList = this._routeList.concat(context._routeList)
   }
 
-  buildActivity(activityName, params, query) {
+  buildActivity(
+    activityName: string,
+    params: ActivityParams = {},
+    query: ActivityQuery = {},
+  ): Activity {
     const route = this._routeList.find(route => route.activityName === activityName)
 
     if (route == null) {
@@ -40,7 +48,7 @@ export class Router {
     return route.buildActivity(params, query)
   }
 
-  buildActivityFromLocation(path, query) {
+  buildActivityFromLocation(path: string, query = ''): Activity | null {
     const matchingRoutes = this._routeList.filter(route => route.match(path))
 
     if (matchingRoutes.length === 0) {

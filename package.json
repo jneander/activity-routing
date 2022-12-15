@@ -20,7 +20,9 @@
     "lint:prettier:fix": "prettier --write .",
     "prebuild": "npm run clean",
     "test": "mocha",
-    "test:watch": "nodemon -e --exec 'npm run test'"
+    "test:types": "tsc --noEmit",
+    "test:types:watch": "tsc --noEmit --watch",
+    "test:watch": "nodemon -e ts --exec 'npm run test'"
   },
   "repository": {
     "type": "git",
@@ -37,19 +39,26 @@
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.19.1",
     "@jneander/prettier-config": "^1.0.0",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/qs": "^6.9.7",
+    "@types/sinon": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.46.1",
     "chai": "^4.3.0",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.8.1",
     "sinon": "^15.0.0",
+    "ts-node": "^10.0.0",
     "typescript": "^4.9.4"
   },
   "prettier": "@jneander/prettier-config"

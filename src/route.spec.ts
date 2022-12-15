@@ -3,7 +3,7 @@ import {expect} from 'chai'
 import {Route} from './route'
 
 describe('Route', () => {
-  let route
+  let route: Route
 
   beforeEach(() => {
     route = new Route('showUserMessage', '/users/:userId/messages/:messageId')
@@ -84,7 +84,7 @@ describe('Route', () => {
     describe('when given incomplete params', () => {
       it('throws an exception', () => {
         expect(() => {
-          route.buildActivity('showUser', {}, {})
+          route.buildActivity({}, {})
         }).to.throw()
       })
     })

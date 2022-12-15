@@ -1,8 +1,14 @@
 import qs from 'qs'
 import UrlPattern from 'url-pattern'
 
+import type {Activity, ActivityParams, ActivityQuery} from './types'
+
 export class Route {
-  constructor(activityName, pathPattern) {
+  private _activityName: string
+  private _pathParts: string[]
+  private _urlPattern: UrlPattern
+
+  constructor(activityName: string, pathPattern: string) {
     const pathParts = pathPattern.split('/').filter(str => str)
 
     this._activityName = activityName
@@ -10,11 +16,11 @@ export class Route {
     this._urlPattern = new UrlPattern(`/${pathParts.join('/')}(/)`)
   }
 
-  get activityName() {
+  get activityName(): string {
     return this._activityName
   }
 
-  buildActivity(params, query) {
+  buildActivity(params: ActivityParams = {}, query: ActivityQuery = {}): Activity {
     const url = this._urlPattern.stringify(params)
     let queryString = qs.stringify(query)
     if (queryString) {
@@ -29,7 +35,7 @@ export class Route {
     }
   }
 
-  buildActivityFromLocation(path, query) {
+  buildActivityFromLocation(path: string, query: ActivityQuery = {}): Activity {
     return this.buildActivity(this._urlPattern.match(path), query)
   }
 
@@ -38,7 +44,7 @@ export class Route {
    * returns an integer representing how closely the route matches the path.
    * Lower values indicate a closer match (1 is exact match).
    */
-  match(path) {
+  match(path: string): number | null {
     const match = this._urlPattern.match(path)
     if (!match) {
       return null

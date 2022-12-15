@@ -3,7 +3,7 @@ import {expect} from 'chai'
 import {Router} from './router'
 
 describe('Router', () => {
-  let router
+  let router: Router
 
   beforeEach(() => {
     router = new Router()

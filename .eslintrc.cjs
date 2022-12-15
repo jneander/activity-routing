@@ -15,6 +15,9 @@ module.exports = {
     'prettier',
     'plugin:eslint-comments/recommended',
     'plugin:promise/recommended',
+    'plugin:import/typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
 
   globals: {},
@@ -37,20 +40,23 @@ module.exports = {
     },
   ],
 
+  parser: '@typescript-eslint/parser',
+
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
 
-  plugins: ['import', 'promise', 'mocha'],
+  plugins: ['prettier', '@typescript-eslint', 'import', 'promise', 'mocha'],
   root: true,
 
   rules: {
+    '@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
     'arrow-body-style': 'off',
     'eslint-comments/no-unused-disable': 'error',
-    'import/extensions': ['error', 'ignorePackages', {js: 'never'}],
+    'import/extensions': ['error', 'ignorePackages', {js: 'never', ts: 'never'}],
     'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
-    'no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+    'no-unused-vars': 'off',
     'prefer-arrow-callback': 'off',
   },
 }
