@@ -25,6 +25,7 @@
     "lint:prettier:fix": "prettier --write .",
     "prebuild": "npm run clean",
     "prepare": "[ -z $CI ] && git config --local core.hooksPath .githooks || true",
+    "prepublishOnly": "npm run build",
     "test": "mocha",
     "test:types": "tsc --noEmit",
     "test:types:watch": "tsc --noEmit --watch",
