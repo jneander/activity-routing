@@ -7,6 +7,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/jneander/activity-routing/compare/v2.0.2...v2.0.3) (2022-12-19)
+
+### Bug Fixes
+
+- build before publishing
+  ([798b8f2](https://github.com/jneander/activity-routing/commit/798b8f2453ed5846af970a61cc596cf76459ae34))
+
 ## [2.0.2](https://github.com/jneander/activity-routing/compare/v2.0.1...v2.0.2) (2022-12-19)
 
 ### Bug Fixes
