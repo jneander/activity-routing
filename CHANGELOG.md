@@ -7,6 +7,15 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/jneander/activity-routing/compare/v2.0.1...v2.0.2) (2022-12-19)
+
+### Bug Fixes
+
+- export types
+  ([1ff4060](https://github.com/jneander/activity-routing/commit/1ff4060165c7d953878ea638dbac32486e946ef8))
+- remove checked-in dist
+  ([5ba5661](https://github.com/jneander/activity-routing/commit/5ba5661b2d73d30c5df2fd99ab0922e5ea8d16ac))
+
 ## [2.0.1](https://github.com/jneander/activity-routing/compare/v2.0.0...v2.0.1) (2022-12-19)
 
 ### Bug Fixes
