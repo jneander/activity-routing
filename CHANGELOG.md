@@ -7,6 +7,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/jneander/activity-routing/compare/v2.0.0...v2.0.1) (2022-12-19)
+
+### Bug Fixes
+
+- add exports field to package.json
+  ([d2a5191](https://github.com/jneander/activity-routing/commit/d2a519105800c0e5634474bba957e576e44eabd3))
+
 ## [2.0.0](https://github.com/jneander/activity-routing/compare/v1.0.1...v2.0.0) (2022-12-18)
 
 ### ⚠ BREAKING CHANGES
